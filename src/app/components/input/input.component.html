@@ -1,0 +1,16 @@
+
+
+<form class="flex flex-row w-full h-20 justify-center items-center" [formGroup]="myForm" (ngSubmit)="myForm.get('agregar')?.value">
+
+    <input type="text" 
+            placeholder="Tareas por hacer..."
+            formControlName="agregar"
+            class="w-72 h-12 border-none rounded-full p-4 bg-slate-100 outline-none">
+
+    <button class="flex h-12 w-32 justify-center items-center bg-blue-500 rounded-r-full -ml-10 text-white font-medium hover:bg-blue-600 transition-colors ease-in-out"
+            (click)="emitTask( myForm.get('agregar')?.value )">
+        Agregar
+    </button>
+
+</form>
+

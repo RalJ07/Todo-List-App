@@ -1,0 +1,28 @@
+<div class="flex flex-col justify-start items-center bg-white w-[37.5rem] h-full rounded-lg p-4 gap-6">
+    
+    <header class="flex flex-row justify-start items-center w-full h-fit pl-4">
+        <h1 class="text-xl font-bold">Lista de tareas:</h1>
+    </header>
+
+    <section class="flex flex-row justify-center items-center w-full h-fit">
+        <app-input (onTaskList)="onNewTask($event)"></app-input>
+    </section>
+
+
+
+    <section *ngIf="tasksList.length > 0" class="flex flex-col justify-around items-center w-[30rem] h-full bg-slate-100 rounded-2xl">
+
+        <ul class="flex flex-col justify-start items-center gap-2 p-4 w-fit">
+    
+            <li *ngFor="let task of tasksList; let i = index" class="flex flex-row w-full justify-around items-center gap-8 max-w-[28rem]">
+    
+                <input class="w-4 h-4" type="radio">
+                <span class="text-lg font-semibold">{{ task }}</span>
+                <button class="text-lg font-semibold" (click)="removeTask(i)"> x </button>
+    
+            </li>
+       
+        </ul>
+    </section>
+
+</div>
